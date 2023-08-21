@@ -129,7 +129,7 @@ class RicaiCodestoreHelper:
                 batch.add_data_object(
                     codefile, 
                     class_name,
-                    uuid=generate_uuid5(identifier=codefile["path"], namespace=codefile["repo"])
+                    uuid=generate_uuid5(identifier=codefile["file_path"], namespace=codefile["repo"])
                 )
         return True
 
