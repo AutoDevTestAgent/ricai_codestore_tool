@@ -34,8 +34,8 @@ class RicaiCodestoreHelper:
             "moduleConfig": {
                 "text2vec-openai": {
                     "model": "davinci",
-                    "modelVersion": "002",
-                    "type": "code"
+                    "modelVersion": "003",
+                    "type": "text"
                 }
             },
             "properties": [
