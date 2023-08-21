@@ -121,7 +121,7 @@ class RicaiCodestoreHelper:
                         "file_path": file.path,
                         "github_url": file.url,
                         "type": file.type,
-                        "repo": file.repository,
+                        "repo": file.repository.name,
                         "content": file_content
                     })
                     file.last_modified
@@ -144,8 +144,8 @@ class RicaiCodestoreHelper:
                 .get("Codefile", ["file_path", "github_url", "type", "repo", "content"])
                 .with_where({
                     "path": ["repo"],
-                    "operator": "Equal",
-                    "valueText": ghub_repo_name
+                    "operator": "Like",
+                    "valueText": f"*{ghub_repo_name}*"
                 })
                 .do()
         )
@@ -167,8 +167,8 @@ class RicaiCodestoreHelper:
                 .get("Codefile", ["file_path", "github_url", "type", "repo", "content"])
                 .with_where({
                     "path": ["repo"],
-                    "operator": "Equal",
-                    "valueText": ghub_repo_name
+                    "operator": "Like",
+                    "valueText": f"*{ghub_repo_name}*"
                 })
                 .do()
         )
@@ -192,8 +192,8 @@ class RicaiCodestoreHelper:
                 .with_near_vector(vectorized_context)
                 .with_where({
                     "path": ["repo"],
-                    "operator": "Equal",
-                    "valueText": ghub_repo_name
+                    "operator": "Like",
+                    "valueText": f"*{ghub_repo_name}*"
                 })
                 .do()
         )
@@ -206,8 +206,8 @@ class RicaiCodestoreHelper:
             "operands": [
                 {
                     "path": ["repo"],
-                    "operator": "Equal",
-                    "valueText": ghub_repo_name
+                    "operator": "Like",
+                    "valueText": f"*{ghub_repo_name}*"
                 },
                 {
                     "path": ["file_path"],
