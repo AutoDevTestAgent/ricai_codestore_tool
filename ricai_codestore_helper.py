@@ -81,7 +81,12 @@ class RicaiCodestoreHelper:
                 },
             ],
         }
-        self.w_client.schema.create_class(class_obj)
+
+        schemas: list = self.w_client.schema.get()["classes"]
+        if len(schemas) != 0:
+            schema = schemas[0]["class"]  
+            if schema != "Codefile":
+                self.w_client.schema.create_class(class_obj)
 
         # Github setup
         ghub_auth = Auth.Token(github_token)
