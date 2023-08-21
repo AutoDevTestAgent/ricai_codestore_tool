@@ -33,8 +33,10 @@ class RicaiCodestoreHelper:
             "vectorizer": "text2vec-openai",
             "moduleConfig": {
                 "text2vec-openai": {
-                    "model": "gpt-3.5-turbo-16k",
-                },
+                    "model": "davinci",
+                    "modelVersion": "002",
+                    "type": "code"
+                }
             },
             "properties": [
                 {
