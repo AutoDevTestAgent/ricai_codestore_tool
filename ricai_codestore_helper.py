@@ -124,7 +124,6 @@ class RicaiCodestoreHelper:
                         "repo": file.repository.name,
                         "content": file_content
                     })
-                    file.last_modified
 
         # TODO: check if code from specific repo/codebase in Github is already present in the vector database
         # TODO: make sure that deterministic uuid generation works 
