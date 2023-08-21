@@ -1,7 +1,4 @@
-import requests
-import json
-
-from typing import Type, Optional
+from typing import Type
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from ricai_codestore_helper import RicaiCodestoreHelper
@@ -22,7 +19,7 @@ class RicaiCodestoreReadAllTool(BaseTool):
     description = (
         "A tool for retrieving all the code from database by specific repository."
     )
-    args_schema: Type[RicaiCodestoreReadAllSchema] = RicaiCodestoreReadAllSchema
+    args_schema: Type[BaseModel] = RicaiCodestoreReadAllSchema
 
     class Config:
         arbitrary_types_allowed = True    

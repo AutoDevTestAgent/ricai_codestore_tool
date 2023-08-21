@@ -1,7 +1,4 @@
-import requests
-import json
-
-from typing import Type, Optional
+from typing import Type
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from ricai_codestore_helper import RicaiCodestoreHelper
@@ -22,7 +19,7 @@ class RicaiCodestoreUpdateTool(BaseTool):
     description = (
         "A tool for updating the code database with latest code from Github."
     )
-    args_schema: Type[RicaiCodestoreUpdateSchema] = RicaiCodestoreUpdateSchema
+    args_schema: Type[BaseModel] = RicaiCodestoreUpdateSchema
 
     class Config:
         arbitrary_types_allowed = True

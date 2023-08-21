@@ -1,7 +1,4 @@
-import requests
-import json
-
-from typing import Type, Optional
+from typing import Type
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from ricai_codestore_helper import RicaiCodestoreHelper
@@ -23,7 +20,7 @@ class RicaiCodestoreReadLatestTool(BaseTool):
     description = (
         "A tool for retrieving the code from the latest commit by specific repository."
     )
-    args_schema: Type[RicaiCodestoreReadLatestSchema] = RicaiCodestoreReadLatestSchema
+    args_schema: Type[BaseModel] = RicaiCodestoreReadLatestSchema
 
     class Config:
         arbitrary_types_allowed = True

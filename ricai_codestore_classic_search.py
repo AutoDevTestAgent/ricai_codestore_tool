@@ -1,7 +1,4 @@
-import requests
-import json
-
-from typing import Type, Optional
+from typing import Type
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from ricai_codestore_helper import RicaiCodestoreHelper
@@ -23,7 +20,7 @@ class RicaiCodestoreClassicSearchTool(BaseTool):
     description = (
         "A tool for searching the code database by specific location."
     )
-    args_schema: Type[RicaiCodestoreClassicSearchSchema] = RicaiCodestoreClassicSearchSchema
+    args_schema: Type[BaseModel] = RicaiCodestoreClassicSearchSchema
 
     class Config:
         arbitrary_types_allowed = True

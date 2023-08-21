@@ -1,13 +1,10 @@
-import requests
 import json
-import tiktoken
 import weaviate
 import os
 import openai
 
 from github import Github
 from github import Auth
-from github.ContentFile import ContentFile
 from weaviate.util import generate_uuid5
 
 class RicaiCodestoreHelper:
